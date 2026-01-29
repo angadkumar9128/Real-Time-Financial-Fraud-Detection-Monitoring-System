@@ -12,7 +12,7 @@
   "pages": [
     {
       "name": "c5384761",
-      "displayName": "Untitled Page",
+      "displayName": "Latest Fraud Alerts Dashboard",
       "layout": [
         {
           "widget": {
@@ -24,8 +24,8 @@
                   "datasetName": "0ab88926",
                   "fields": [
                     {
-                      "name": "weekly(event_timestamp)",
-                      "expression": "DATE_TRUNC(\"WEEK\", `event_timestamp`)"
+                      "name": "daily(event_timestamp)",
+                      "expression": "DATE_TRUNC(\"DAY\", `event_timestamp`)"
                     },
                     {
                       "name": "count(fraud_score)",
@@ -41,10 +41,10 @@
               "widgetType": "area",
               "encodings": {
                 "x": {
-                  "fieldName": "weekly(event_timestamp)",
+                  "fieldName": "daily(event_timestamp)",
                   "axis": {
                     "hideLabels": true,
-                    "title": "Most Recent Happened Froud "
+                    "title": "Most Recent Happened Fraud "
                   },
                   "displayName": "Most Recent Happened Froud ",
                   "scale": {
@@ -54,7 +54,7 @@
                 "y": {
                   "fieldName": "count(fraud_score)",
                   "axis": {
-                    "title": "Count of Froud over Time"
+                    "title": "Count of Fraud over Time"
                   },
                   "displayName": "Count of Froud over Time",
                   "scale": {
@@ -63,7 +63,7 @@
                 }
               },
               "frame": {
-                "title": "Most Recent Happened Froud Over Time",
+                "title": "Most Recent Happened Fraud Over Time",
                 "showTitle": true,
                 "headerAlignment": "center"
               }
@@ -187,7 +187,7 @@
                 "layout": "stack"
               },
               "frame": {
-                "title": "Number Of Froud (%) In Last 4 Months",
+                "title": "Numbers of Fraud Happened (%) In Last 4 Months",
                 "showTitle": true,
                 "headerAlignment": "center"
               }
@@ -255,7 +255,7 @@
                 }
               },
               "frame": {
-                "title": "Froud Transaction Amount By Transaction ID in Days",
+                "title": "Fraud Transaction Amount By Transaction ID in Days",
                 "showTitle": true,
                 "headerAlignment": "center"
               },
