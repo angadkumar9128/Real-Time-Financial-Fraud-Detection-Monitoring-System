@@ -68,6 +68,12 @@ Databricks SQL Dashboards
 
 ---
 
+## 🔄 Detailed Workflow Diagram
+
+<img width="1536" height="1024" alt="0ddc0348-2366-4be9-9794-6c11bb804753" src="https://github.com/user-attachments/assets/1749cba6-76c4-4769-a082-b05ffa00c29f" />
+
+---
+
 ## 👥 Team-Based Ownership Model
 
 This project is structured as **four independent yet coordinated teams**, mirroring real enterprise data organizations.
@@ -197,6 +203,12 @@ These dashboards enable:
 * Checkpoint-based fault tolerance
 * Reproducible ML pipelines
 * Audit-ready Gold datasets
+
+---
+
+## 💻 Databricks Workspace - Project Structure Diagram
+
+<img width="1536" height="1024" alt="ChatGPT Image Jan 27, 2026, 09_05_01 PM" src="https://github.com/user-attachments/assets/b181ffff-6086-4bab-8159-6061942d0e4c" />
 
 ---
 
