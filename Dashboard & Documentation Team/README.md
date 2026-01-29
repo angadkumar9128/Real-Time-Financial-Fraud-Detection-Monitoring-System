@@ -1,265 +1,376 @@
 
-# 📘 README.md
+# ✅  Dashboard & Documentation Engineer
 
-## **Dashboard & Documentation Team**
-
----
-
-## 🧭 Team Overview
-
-The **Dashboard & Documentation Team** is responsible for **presenting the outcomes of the Real-Time Financial Fraud Detection & Monitoring System in a clear, actionable, and business-friendly manner**.
-
-While upstream teams focus on data ingestion, transformation, and machine learning, this team ensures that:
-
-* Fraud risks are **visible in real time**
-* Metrics are **interpretable by non-technical stakeholders**
-* The system is **well-documented, explainable, and auditable**
-
-This team acts as the **interface between technology and decision-makers**.
+## Gold Analytics + Databricks SQL Dashboards + Industry Presentation
 
 ---
 
-## 🎯 Core Responsibilities
+# 📌 Role: Dashboard & Documentation Engineer
 
-### 📊 Fraud Monitoring Dashboards
+### Real-Time Financial Fraud Detection & Monitoring System
 
-* Design real-time dashboards using **Databricks SQL**
-* Visualize ML-scored fraud outputs from the **Gold layer**
-* Enable monitoring, investigation, and reporting workflows
-
-### 📚 Project Documentation
-
-* Maintain comprehensive system documentation
-* Explain:
-
-  * Architecture decisions
-  * Data flow across layers
-  * Model outputs and interpretation
-* Support onboarding, audits, and interviews
+**Responsibility:** Deliver business-facing fraud monitoring dashboards and maintain complete project documentation.
 
 ---
 
-## 🏗️ Position in System Architecture
+## 1. Objective of the Gold Layer & Dashboards
+
+Once transactions are scored by ML, stakeholders need:
+
+* Real-time fraud visibility
+* Alert investigation workflows
+* Customer risk profiling
+* Business impact metrics
+
+The Dashboard Engineer ensures:
+
+✅ Fraud insights are understandable
+✅ Analysts can respond quickly
+✅ Executives see fraud trends
+✅ System is presentation-ready
+
+---
+
+## 2. Gold Layer Purpose (Business-Ready Data)
+
+Gold layer provides:
+
+* curated datasets
+* aggregated fraud metrics
+* dashboard-ready tables
+
+Gold is optimized for:
+
+* BI tools
+* Databricks SQL
+* monitoring systems
+* reporting
+
+---
+
+## 3. Gold Tables Delivered
+
+The project produces these key Gold datasets:
+
+---
+
+### 3.1 Fraud Predictions (Event-Level)
+
+Table:
 
 ```
-Gold Layer (ML-Scored Data)
-        ↓
-Analytical Aggregations
-        ↓
-Databricks SQL Dashboards
-        ↓
-Fraud Analysts / Business Teams
+fraud_predictions
 ```
 
-This team consumes **only Gold-layer datasets**, ensuring dashboards remain:
+Contains one row per scored transaction:
 
-* Stable
-* Fast
-* Business-ready
+| Column          | Meaning                  |
+| --------------- | ------------------------ |
+| TransactionID   | Unique transaction       |
+| event_timestamp | Time of transaction      |
+| card1           | Customer/card identifier |
+| TransactionAmt  | Transaction value        |
+| fraud_score     | Model anomaly score      |
+| is_anomaly      | Fraud alert flag         |
 
----
-
-## 📊 Gold Data Sources Used
-
-| Table Name                 | Description                    |
-| -------------------------- | ------------------------------ |
-| `fraud_predictions`        | Transaction-level fraud scores |
-| `gold_fraud_metrics_time`  | Time-based fraud trends        |
-| `gold_high_risk_cards`     | High-risk entities             |
-| `gold_latest_fraud_alerts` | Recent fraud alerts            |
+This is the foundation of all dashboards.
 
 ---
 
-## 📈 Dashboards Designed
+### 3.2 Fraud Trend Metrics (Time-Series)
 
-### 1️⃣ Fraud Overview Dashboard
-
-**Objective:**
-Provide a **real-time snapshot of fraud activity**.
-
-**Key Visuals:**
-
-* Total transactions vs fraud transactions
-* Fraud rate (%) over time
-* Fraud trend line (minute-level)
-
-**Business Value:**
-
-* Early detection of fraud spikes
-* Monitoring system health
-* Executive-level visibility
-
----
-
-### 2️⃣ Fraud Trend & Rate Dashboard
-
-**Objective:**
-Analyze how fraud evolves over time.
-
-**Key Visuals:**
-
-* Fraud count per minute
-* Fraud rate (%) trend
-* Moving averages for smoothing
-
-**Business Value:**
-
-* Detect coordinated fraud attacks
-* Identify abnormal transaction surges
-
----
-
-### 3️⃣ High-Risk Entity Dashboard
-
-**Objective:**
-Identify repeat offenders and risky entities.
-
-**Key Visuals:**
-
-* Top high-risk cards
-* Fraud concentration distribution
-* Fraud rate per card
-
-**Business Value:**
-
-* Prioritize investigations
-* Reduce manual review effort
-* Apply targeted controls
-
----
-
-### 4️⃣ Fraud Alert Monitoring Dashboard
-
-**Objective:**
-Enable **operational fraud response**.
-
-**Key Visuals:**
-
-* Live fraud alerts table
-* Sorted by fraud score
-* Filters by card, amount, timestamp
-
-**Business Value:**
-
-* Real-time alert triage
-* Faster escalation
-* Reduced financial loss
-
----
-
-### 5️⃣ Fraud Impact Dashboard
-
-**Objective:**
-Quantify business impact of fraud detection.
-
-**Key Visuals:**
-
-* Total fraud amount detected
-* High-value fraud transactions
-* Fraud severity breakdown
-
-**Business Value:**
-
-* Measure financial risk
-* Demonstrate system ROI
-* Support compliance reporting
-
----
-
-## 🧠 Dashboard Design Principles
-
-| Principle             | Reason                  |
-| --------------------- | ----------------------- |
-| Real-time updates     | Immediate visibility    |
-| Minimal clutter       | Faster comprehension    |
-| Business labels       | Non-technical usability |
-| Drill-down capability | Investigation support   |
-| Consistent time grain | Accurate trend analysis |
-
----
-
-## 📂 Folder Structure (Team Scope)
+Table:
 
 ```
-dashboards/
-│
-├── fraud_overview_dashboard.json
-├── fraud_trend_dashboard.json
-├── high_risk_entities_dashboard.json
-├── fraud_alerts_dashboard.json
-├── fraud_impact_dashboard.json
-│
-documentation/
-│
-├── system_architecture.md
-├── gold_layer_metrics_explained.md
-├── dashboard_user_guide.md
-├── operational_playbook.md
+gold_fraud_metrics_time
 ```
 
----
+Aggregated by minute:
 
-## 🧠 Key Metrics Explained (Business-Friendly)
+* total transactions
+* fraud transactions
+* fraud rate %
 
-| Metric         | Meaning              | Usage                |
-| -------------- | -------------------- | -------------------- |
-| Fraud Score    | ML confidence level  | Alert prioritization |
-| Fraud Rate     | % of suspicious txns | Risk monitoring      |
-| Fraud Count    | Total anomalies      | Volume tracking      |
-| High-Risk Card | Repeat offender      | Investigation focus  |
-| Fraud Amount   | Financial exposure   | Impact analysis      |
+Purpose:
+
+> Detect fraud spikes and attack patterns.
 
 ---
 
-## 📚 Documentation Standards
+### 3.3 High-Risk Cards (Entity Ranking)
 
-The documentation maintained by this team ensures:
+Table:
 
-* Architectural transparency
-* Regulatory audit readiness
-* Knowledge transfer across teams
-* Interview and demo preparedness
+```
+gold_high_risk_cards
+```
 
----
+Ranks customers/cards by:
 
-## 🚫 What This Team Does NOT Do
+* fraud count
+* fraud rate
 
-❌ Data ingestion
-❌ Feature engineering
-❌ ML model training
-❌ Streaming pipelines
+Purpose:
 
-Those responsibilities belong to upstream teams.
+> Identify repeat offenders and risky accounts.
 
 ---
 
-## 🧠 How This Team Adds Value
+### 3.4 Latest Fraud Alerts (Operational Queue)
 
-> Fraud detection is only effective if insights are visible and actionable.
+Table:
 
-This team ensures:
+```
+gold_latest_fraud_alerts
+```
 
-* ML outputs are trusted
-* Decisions are data-driven
-* Risks are surfaced early
-* Stakeholders stay informed
+Contains:
+
+* most recent fraud anomalies
+* sorted by timestamp
+
+Purpose:
+
+> Investigation dashboard for fraud analysts.
 
 ---
 
-## 🎤 Summary
-
-> “The Dashboard & Documentation Team translates machine-learning-driven fraud detection outputs into real-time dashboards and structured documentation, enabling continuous monitoring, investigation, and business decision-making.”
+## 4. Gold Metrics Built (SQL Examples)
 
 ---
 
-## 🏁 Project Completion Statement
+### Fraud Rate Over Time
 
-With this team’s work:
+```sql
+SELECT
+  minute_ts,
+  total_txns,
+  fraud_txns,
+  fraud_rate
+FROM gold_fraud_metrics_time;
+```
 
-* The system is transparent
-* The insights are actionable
-* The solution is business-ready
-* The project is production-aligned
+Chart:
 
+📊 Line Trend
+
+Use:
+
+> Monitor fraud spikes in real time.
+
+---
+
+### Top Risk Customers
+
+```sql
+SELECT
+  card1,
+  fraud_txns,
+  fraud_rate
+FROM gold_high_risk_cards
+ORDER BY fraud_txns DESC;
+```
+
+Chart:
+
+📊 Bar Chart
+
+Use:
+
+> Focus investigations on highest-risk accounts.
+
+---
+
+### Latest Fraud Alerts
+
+```sql
+SELECT *
+FROM gold_latest_fraud_alerts
+LIMIT 50;
+```
+
+Chart:
+
+📋 Table
+
+Use:
+
+> Live fraud alert console.
+
+---
+
+## 5. Databricks SQL Dashboards (Industry Standard)
+
+Dashboards are designed for different users:
+
+---
+
+# ✅ Dashboard 1: Fraud Monitoring Overview
+
+Audience:
+
+* Executives
+* Fraud managers
+
+Key Visuals:
+
+* Total fraud alerts KPI
+* Fraud rate % trend
+* Fraud volume trend
+
+Purpose:
+
+> High-level fraud health monitoring.
+
+---
+
+# ✅ Dashboard 2: Fraud Alerts Console
+
+Audience:
+
+* Fraud analysts
+* Investigation teams
+
+Key Visuals:
+
+* Latest anomalies table
+* Fraud score distribution
+* Fraud severity buckets
+
+Purpose:
+
+> Operational fraud response workflow.
+
+---
+
+# ✅ Dashboard 3: Customer/Card Risk Profiling
+
+Audience:
+
+* Risk teams
+* Compliance
+
+Key Visuals:
+
+* High-risk cards ranking
+* Fraud concentration (Pareto)
+* Risk segmentation bands
+
+Purpose:
+
+> Detect repeat fraud behavior and risky entities.
+
+---
+
+## 6. Recommended Dashboard Charts (Portfolio Strong)
+
+| Chart                           | Why it matters            |
+| ------------------------------- | ------------------------- |
+| Fraud trend over time           | Detect attack spikes      |
+| Fraud rate % KPI                | Normalized fraud risk     |
+| Latest fraud alerts table       | Analyst action queue      |
+| Top risky cards                 | Repeat offender detection |
+| Fraud severity by amount bucket | Business loss impact      |
+| Fraud score distribution        | Model health monitoring   |
+
+---
+
+## 7. Storytelling for Industry Presentation
+
+When presenting dashboards, explain:
+
+1. **What is happening now?**
+   → Fraud alerts live
+
+2. **How bad is it?**
+   → Fraud rate trend
+
+3. **Who is responsible?**
+   → High-risk customers/cards
+
+4. **What is the business impact?**
+   → Fraud amount prevented
+
+This is exactly how banks monitor fraud.
+
+---
+
+## 8. Documentation Responsibilities
+
+A professional fraud system must include:
+
+---
+
+### README.md Contents
+
+* Project overview
+* Architecture diagram
+* Technology stack
+* Pipeline explanation
+* How to run notebooks
+* Dashboard screenshots
+
+---
+
+### Key Concepts to Document
+
+* Medallion architecture
+* Structured Streaming checkpoints
+* MLflow model registry
+* Real-time fraud scoring
+* Gold metrics design
+
+---
+
+### Troubleshooting Section
+
+Include common issues:
+
+* Streaming rows read = 0 → checkpoint reset
+* MLflow schema mismatch → strict casting
+* Unity Catalog stages unsupported → use aliases
+
+---
+
+## 9. Interview Questions (Dashboards + Gold)
+
+---
+
+### Q1: Why Gold Layer?
+
+Gold provides business-ready datasets optimized for analytics and BI.
+
+---
+
+### Q2: Why dashboards matter?
+
+Fraud detection is useless without monitoring and action workflows.
+
+---
+
+### Q3: What makes dashboards real-time?
+
+They query continuously updated Gold Delta tables.
+
+---
+
+### Q4: What is the difference between fraud_predictions and gold_metrics_time?
+
+* predictions = transaction-level scoring
+* metrics = aggregated fraud trends
+
+---
+
+## 10. Output of Dashboard Engineer
+
+Final deliverables:
+
+✅ Fraud monitoring dashboards
+✅ Gold analytics tables
+✅ Executive + analyst views
+✅ Full project documentation
+✅ Presentation-ready storytelling
+
+---
 
 
