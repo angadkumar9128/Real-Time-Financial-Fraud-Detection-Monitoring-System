@@ -74,6 +74,7 @@ Databricks SQL Dashboards
 
 ---
 
+> Note : The IEEE (Institute of Electrical and Electronics Engineers) Computational Intelligence Society (CIS) is a professional society within the IEEE focused on nature-inspired problem-solving, including neural networks, fuzzy systems, and evolutionary computation. It fosters research and innovation in AI, machine learning, and automation through conferences, publications, and technical committees to address real-world challenges
 ## 👥 Team-Based Ownership Model
 
 This project is structured as **four independent yet coordinated teams**, mirroring real enterprise data organizations.
