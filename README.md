@@ -128,6 +128,18 @@ This project is structured as **four independent yet coordinated teams**, mirror
 * MLflow (Unity Catalog)
 * `foreachBatch` streaming inference
 
+> Note : how isolation forest works ?
+> Isolation Forest is an unsupervised machine learning algorithm designed specifically for anomaly detection. Unlike most methods that profile "normal" data to find deviations, Isolation Forest explicitly isolates anomalies by exploiting their inherent properties: they are few and different. 
+
+Core Mechanism: Isolation through Partitioning 
+The algorithm works by separating data points using a series of random recursive splits. 
+
+Step 1: Random Splitting: The algorithm selects a random feature from the dataset and a random split value between that feature’s minimum and maximum values.
+Step 2: Recursive Partitioning: This process is repeated until every data point is isolated in its own "leaf" or a specific tree height is reached.
+Step 3: Path Length: For each point, the algorithm measures the path length—the number of splits required to isolate it.
+Anomalies are rare and located in sparse regions, so they typically require fewer splits (shorter paths) to isolate.
+Normal points are clustered together and require many more splits (longer paths).
+
 ---
 
 ### 📘 Dashboard & Documentation Team
